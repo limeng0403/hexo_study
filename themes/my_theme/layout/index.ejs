@@ -1,0 +1,32 @@
+this is index page
+
+<p></p>
+
+<% for(i in site.posts){ %> 
+    <%= i %>
+    <br />
+<% } %>
+
+<p></p>
+
+<%= site.posts.each %>
+<br />
+<%= site.posts.forEach %>
+
+<p></p>
+
+<% site.posts.each(function(obj,i){ %>
+    <% for(i in obj){ %> 
+        <%= i %>
+        <br />
+    <% } %>
+    
+    ojb.setTags('temp');
+    
+    <%= obj['title'] %>
+    <br />
+    <%= url_for(obj['path']) %>
+    <br />
+    <%= obj['setCategories'] %>
+    <br />
+<% }) %>
