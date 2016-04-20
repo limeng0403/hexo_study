@@ -3,12 +3,18 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>my theme</title>
   <%- css('https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css') %>
 </head>
 
 <body>
-  <%- body %>
+  <div class="container">
+    <%- body %>
+  </div>
+  <%- js('https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js') %>
+  <%- js('https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js') %>
+  <%- js('https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js') %>
 </body>
 
 </html>

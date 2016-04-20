@@ -1,32 +1,30 @@
-this is index page
-
-<p></p>
-
-<% for(i in site.posts){ %> 
-    <%= i %>
-    <br />
-<% } %>
-
-<p></p>
-
-<%= site.posts.each %>
-<br />
-<%= site.posts.forEach %>
-
-<p></p>
-
-<% site.posts.each(function(obj,i){ %>
-    <% for(i in obj){ %> 
-        <%= i %>
-        <br />
-    <% } %>
-    
-    ojb.setTags('temp');
-    
-    <%= obj['title'] %>
-    <br />
-    <%= url_for(obj['path']) %>
-    <br />
-    <%= obj['setCategories'] %>
-    <br />
-<% }) %>
+<table class="table table-border">
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Type</th>
+            <th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% site.posts.each(function(obj,i){ %>
+            <% for(i in obj){ %> 
+            <tr>
+                <td><%= i %></td>
+                <td>
+                    <% if((typeof obj[i])==='string' || (typeof obj[i])==='boolean'){ %>
+                       <%- obj[i] %>
+                    <% }else if((typeof obj[i])==='function'){ %>
+                       <pre class="prettyprint"><%= obj[i] %></pre>
+                    <% }else{ %>
+                       <%= typeof obj[i] %>
+                    <% } %>
+                </td>
+                <td>
+                    <a href="javascript:;">check</a>
+                </td>
+            </tr>
+            <% } %>
+        <% }) %>
+    </tbody>
+</table>
